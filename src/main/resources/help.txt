@@ -1,0 +1,68 @@
+Structure Tools
+(https://github.com/Marcono1234/structure-tools)
+
+Tools for working with Minecraft structure files. To inspect structure 
+files use an NBT editor, such as https://github.com/jaquadro/NBTExplorer.
+
+Keep in mind that vanilla Minecraft officially only supports 32*32*32 structures 
+and larger custom structures might not be usable at some point. Additionally 
+structures might not be very memory efficient and other ways of placing the blocks 
+might suit better.
+
+Command usage:
+"command glue <config> <layout> <output_path>"
+    - Config:
+        JSON file with the following content:
+        {
+            "author": <String>, optional; default = no author
+            "dataVersion": <int>, optional; DataVersion to write; 
+                            default = use highest DataVersion of all structures
+            "writeFakeSize": <boolean>, optional; Whether the maximum vanilla size
+                            should be written instead of the actual one, allows 
+                            using "LOAD" button in Minecraft structure block GUI;
+                            default = true
+        }
+    - Layout:
+        JSON file with the following structure:
+        [  
+        ↑   [
+        |   ↑   [--x-→],
+        |   z   [--x-→],
+        |   |   [--x-→]
+        y   ],
+        |   [
+        |   ↑   [--x-→],
+        |   z   [--x-→],
+        |   |   [--x-→]
+        |   ]
+        ]
+        
+        The "x" lists contain file paths to the structure files to use. Lists 
+        can be empty or contain 'null' to skip the entry.
+        
+        Let's say you have three structures:
+            - x1y0z0.nbt
+            - x0y0z1.nbt
+            - x0y1z0.nbt
+        And want to place them at the position corresponding to their name. Then 
+        the layout file could look like this:
+        [
+            [
+                ["x0y1z0.nbt"]
+            ],
+            [
+                ["x0y0z1.nbt"],
+                [null, "x1y0z0.nbt"]
+            ]
+        ]
+    - Output path
+        File path with extension to use for the created structure.
+        
+    #####
+    
+    "Glues" together multiple structure files. It is assumed that the size of each 
+    structure is the vanilla maximum. The program will refuse to glue larger structures 
+    since they might overwrite each other. If the sizes of the structures are not the 
+    vanilla maximum, it is recommended to load them in a Minecraft world and lay them 
+    out there. Afterwards the structure can be saved as maximum sized vanilla 
+    structures and glued together. 

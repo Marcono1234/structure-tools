@@ -1,0 +1,10 @@
+[
+    [
+        ["src/test/resources/structures/x0y1z1.nbt", "src/test/resources/structures/x1y1z1.nbt"],
+        ["src/test/resources/structures/x0y1z0.nbt", "src/test/resources/structures/x1y1z0.nbt"]
+    ],
+    [
+        ["src/test/resources/structures/x0y0z1.nbt", "src/test/resources/structures/x1y0z1.nbt"],
+        ["src/test/resources/structures/x0y0z0.nbt", "src/test/resources/structures/x1y0z0.nbt"]
+    ]
+]
