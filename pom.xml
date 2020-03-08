@@ -5,7 +5,7 @@
 
   <groupId>marcono1234</groupId>
   <artifactId>structure-tools</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-snapshot</version>
   <packaging>jar</packaging>
 
   <name>structure-tools</name>
