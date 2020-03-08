@@ -25,7 +25,7 @@ import net.querz.nbt.NBTUtil;
 public class GluerCommandLine {
     private static final Logger logger = LogManager.getLogger();
     
-    private static final String IDENT = "  ";
+    private static final String INDENT = "  ";
     private static final Function<String, Path> EXISTING_FILE_PARSER = pathString -> {
         final Path path = Paths.get(pathString);
         
@@ -83,7 +83,7 @@ public class GluerCommandLine {
                 errorMessageBuilder.append('\n');
                 errorMessageBuilder.append(String.format("- %s", arg.getName()));
                 errorMessageBuilder.append('\n');
-                errorMessageBuilder.append(IDENT + String.join(IDENT, arg.getDescription().split("\n")));
+                errorMessageBuilder.append(INDENT + String.join(INDENT, arg.getDescription().split("\n")));
             }
             
             logger.error(errorMessageBuilder.toString());
