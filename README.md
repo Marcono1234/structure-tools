@@ -1,3 +1,9 @@
+> [!NOTE]
+> This repository has been archived. Most likely these tools do not work correctly for recent
+> Minecraft versions.
+>
+> Thanks nonetheless for your interest!
+
 # About
 Tools for working with Minecraft structure files. To inspect structure files use an NBT editor, 
 such as [NBTExplorer](https://github.com/jaquadro/NBTExplorer).
